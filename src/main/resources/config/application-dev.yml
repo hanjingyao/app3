@@ -42,7 +42,7 @@ spring:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:mysql://localhost:3306/app3?useUnicode=true&characterEncoding=utf8&useSSL=false
         username: root
-        password:
+        password: 123456
         hikari:
             data-source-properties:
                 cachePrepStmts: true
@@ -54,6 +54,7 @@ spring:
         database: MYSQL
         show-sql: true
         properties:
+
             hibernate.id.new_generator_mappings: true
             hibernate.cache.use_second_level_cache: true
             hibernate.cache.use_query_cache: false
