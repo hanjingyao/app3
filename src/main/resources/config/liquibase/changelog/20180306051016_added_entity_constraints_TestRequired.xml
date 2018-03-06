@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity TestRequired.
+    -->
+    <changeSet id="20180306051016-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="test_result_id"
+                                 baseTableName="test_required"
+                                 constraintName="fk_test_required_test_result_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_result"/>
+
+        <addForeignKeyConstraint baseColumnNames="test_record_id"
+                                 baseTableName="test_required"
+                                 constraintName="fk_test_required_test_record_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_record"/>
+
+        <addForeignKeyConstraint baseColumnNames="procedure_table_id"
+                                 baseTableName="test_required"
+                                 constraintName="fk_test_required_procedure_table_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="procedure_table"/>
+
+    </changeSet>
+</databaseChangeLog>

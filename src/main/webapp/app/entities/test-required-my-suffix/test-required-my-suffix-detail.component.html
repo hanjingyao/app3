@@ -1,0 +1,44 @@
+
+<div *ngIf="testRequired">
+    <h2><span jhiTranslate="app3App.testRequired.detail.title">Test Required</span> {{testRequired.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="app3App.testRequired.testRequiredOfAll">Test Required Of All</span></dt>
+        <dd>
+            <span>{{testRequired.testRequiredOfAll}}</span>
+        </dd>
+        <dt><span jhiTranslate="app3App.testRequired.testResult">Test Result</span></dt>
+        <dd>
+            <div *ngIf="testRequired.testResultId">
+                <a [routerLink]="['/test-result-my-suffix', testRequired.testResultId]">{{testRequired.testResultId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="app3App.testRequired.testRecord">Test Record</span></dt>
+        <dd>
+            <div *ngIf="testRequired.testRecordId">
+                <a [routerLink]="['/test-record-my-suffix', testRequired.testRecordId]">{{testRequired.testRecordId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="app3App.testRequired.procedureTable">Procedure Table</span></dt>
+        <dd>
+            <div *ngIf="testRequired.procedureTableId">
+                <a [routerLink]="['/procedure-table-my-suffix', testRequired.procedureTableId]">{{testRequired.procedureTableId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'test-required-my-suffix/'+ testRequired.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

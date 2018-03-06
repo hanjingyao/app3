@@ -1,0 +1,51 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myTestRequiredLabel" jhiTranslate="app3App.testRequired.home.createOrEditLabel">Create or edit a Test Required</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!testRequired.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="testRequired.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="app3App.testRequired.testRequiredOfAll" for="field_testRequiredOfAll">Test Required Of All</label>
+            <input type="text" class="form-control" name="testRequiredOfAll" id="field_testRequiredOfAll"
+                [(ngModel)]="testRequired.testRequiredOfAll" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="app3App.testRequired.testResult" for="field_testResult">Test Result</label>
+            <select class="form-control" id="field_testResult" name="testResult" [(ngModel)]="testRequired.testResultId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="testResultOption.id" *ngFor="let testResultOption of testresults; trackBy: trackTestResultById">{{testResultOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="app3App.testRequired.testRecord" for="field_testRecord">Test Record</label>
+            <select class="form-control" id="field_testRecord" name="testRecord" [(ngModel)]="testRequired.testRecordId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="testRecordOption.id" *ngFor="let testRecordOption of testrecords; trackBy: trackTestRecordById">{{testRecordOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="app3App.testRequired.procedureTable" for="field_procedureTable">Procedure Table</label>
+            <select class="form-control" id="field_procedureTable" name="procedureTable" [(ngModel)]="testRequired.procedureTableId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="procedureTableOption.id" *ngFor="let procedureTableOption of proceduretables; trackBy: trackProcedureTableById">{{procedureTableOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

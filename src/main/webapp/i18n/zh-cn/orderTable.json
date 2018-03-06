@@ -1,0 +1,21 @@
+{
+    "app3App": {
+        "orderTable" : {
+            "home": {
+                "title": "Order Tables",
+                "createLabel": "创建新 Order Table",
+                "createOrEditLabel": "创建或编辑 Order Table"
+            },
+            "created": "Order Table {{ param }} 创建成功",
+            "updated": "Order Table {{ param }} 更新成功",
+            "deleted": "Order Table {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Order Table {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Order Table"
+            },
+            "rank": "Rank"
+        }
+    }
+}

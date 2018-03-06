@@ -1,0 +1,32 @@
+
+<div *ngIf="equipment">
+    <h2><span jhiTranslate="app3App.equipment.detail.title">Equipment</span> {{equipment.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="app3App.equipment.equipment">Equipment</span></dt>
+        <dd>
+            <span>{{equipment.equipment}}</span>
+        </dd>
+        <dt><span jhiTranslate="app3App.equipment.orderTable">Order Table</span></dt>
+        <dd>
+            <div *ngIf="equipment.orderTableId">
+                <a [routerLink]="['/order-table-my-suffix', equipment.orderTableId]">{{equipment.orderTableId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'equipment-my-suffix/'+ equipment.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

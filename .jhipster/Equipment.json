@@ -1,0 +1,26 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "orderTable",
+            "otherEntityName": "orderTable",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "equipment"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "equipment",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180306051014",
+    "entityTableName": "equipment",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

@@ -1,0 +1,22 @@
+{
+    "app3App": {
+        "equipment" : {
+            "home": {
+                "title": "Equipment",
+                "createLabel": "创建新 Equipment",
+                "createOrEditLabel": "创建或编辑 Equipment"
+            },
+            "created": "Equipment {{ param }} 创建成功",
+            "updated": "Equipment {{ param }} 更新成功",
+            "deleted": "Equipment {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Equipment {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Equipment"
+            },
+            "equipment": "Equipment",
+            "orderTable": "Order Table"
+        }
+    }
+}

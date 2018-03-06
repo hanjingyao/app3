@@ -1,0 +1,32 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "orderTable",
+            "otherEntityName": "orderTable",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "procedureTable"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "testRequired",
+            "otherEntityName": "testRequired",
+            "otherEntityRelationshipName": "procedureTable"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "procedureTable",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180306051019",
+    "entityTableName": "procedure_table",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

@@ -1,0 +1,41 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "testResult",
+            "otherEntityName": "testResult",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "testRequired"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "testRecord",
+            "otherEntityName": "testRecord",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "testRequired"
+        },
+        {
+            "relationshipName": "procedureTable",
+            "otherEntityName": "procedureTable",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "testRequiredOfAll",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180306051016",
+    "javadoc": "not an ignored comment",
+    "entityTableName": "test_required",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

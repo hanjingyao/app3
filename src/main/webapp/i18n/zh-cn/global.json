@@ -15,6 +15,12 @@
                 "employeeMySuffix": "Employee",
                 "jobMySuffix": "Job",
                 "jobHistoryMySuffix": "Job History",
+                "equipmentMySuffix": "Equipment",
+                "orderTableMySuffix": "Order Table",
+                "testRequiredMySuffix": "Test Required",
+                "testResultMySuffix": "Test Result",
+                "testRecordMySuffix": "Test Record",
+                "procedureTableMySuffix": "Procedure Table",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

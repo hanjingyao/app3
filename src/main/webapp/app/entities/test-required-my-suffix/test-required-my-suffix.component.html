@@ -1,0 +1,76 @@
+<div>
+    <h2>
+        <span jhiTranslate="app3App.testRequired.home.title">Test Requireds</span>
+        <button class="btn btn-primary float-right jh-create-entity create-test-required-my-suffix" [routerLink]="['/', { outlets: { popup: ['test-required-my-suffix-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="app3App.testRequired.home.createLabel">
+            Create new Test Required
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="testRequireds">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="app3App.testRequired.testRequiredOfAll">Test Required Of All</span></th>
+            <th><span jhiTranslate="app3App.testRequired.testResult">Test Result</span></th>
+            <th><span jhiTranslate="app3App.testRequired.testRecord">Test Record</span></th>
+            <th><span jhiTranslate="app3App.testRequired.procedureTable">Procedure Table</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let testRequired of testRequireds ;trackBy: trackId">
+                <td><a [routerLink]="['../test-required-my-suffix', testRequired.id ]">{{testRequired.id}}</a></td>
+                <td>{{testRequired.testRequiredOfAll}}</td>
+                <td>
+                    <div *ngIf="testRequired.testResultId">
+                        <a [routerLink]="['../test-result-my-suffix', testRequired.testResultId  ]" >{{testRequired.testResultId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="testRequired.testRecordId">
+                        <a [routerLink]="['../test-record-my-suffix', testRequired.testRecordId  ]" >{{testRequired.testRecordId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="testRequired.procedureTableId">
+                        <a [routerLink]="['../procedure-table-my-suffix', testRequired.procedureTableId  ]" >{{testRequired.procedureTableId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../test-required-my-suffix', testRequired.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'test-required-my-suffix/'+ testRequired.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'test-required-my-suffix/'+ testRequired.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

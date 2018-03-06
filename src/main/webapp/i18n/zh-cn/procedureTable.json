@@ -1,0 +1,23 @@
+{
+    "app3App": {
+        "procedureTable" : {
+            "home": {
+                "title": "Procedure Tables",
+                "createLabel": "创建新 Procedure Table",
+                "createOrEditLabel": "创建或编辑 Procedure Table"
+            },
+            "created": "Procedure Table {{ param }} 创建成功",
+            "updated": "Procedure Table {{ param }} 更新成功",
+            "deleted": "Procedure Table {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Procedure Table {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Procedure Table"
+            },
+            "procedureTable": "Procedure Table",
+            "orderTable": "Order Table",
+            "testRequired": "Test Required"
+        }
+    }
+}

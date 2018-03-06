@@ -57,6 +57,13 @@ public class CacheConfiguration {
             cm.createCache(com.jouav.myapp.domain.Job.class.getName(), jcacheConfiguration);
             cm.createCache(com.jouav.myapp.domain.Job.class.getName() + ".tasks", jcacheConfiguration);
             cm.createCache(com.jouav.myapp.domain.JobHistory.class.getName(), jcacheConfiguration);
+            cm.createCache(com.jouav.myapp.domain.Equipment.class.getName(), jcacheConfiguration);
+            cm.createCache(com.jouav.myapp.domain.OrderTable.class.getName(), jcacheConfiguration);
+            cm.createCache(com.jouav.myapp.domain.TestRequired.class.getName(), jcacheConfiguration);
+            cm.createCache(com.jouav.myapp.domain.TestResult.class.getName(), jcacheConfiguration);
+            cm.createCache(com.jouav.myapp.domain.TestRecord.class.getName(), jcacheConfiguration);
+            cm.createCache(com.jouav.myapp.domain.ProcedureTable.class.getName(), jcacheConfiguration);
+            cm.createCache(com.jouav.myapp.domain.ProcedureTable.class.getName() + ".testRequireds", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

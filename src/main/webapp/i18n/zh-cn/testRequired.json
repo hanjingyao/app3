@@ -1,0 +1,24 @@
+{
+    "app3App": {
+        "testRequired" : {
+            "home": {
+                "title": "Test Requireds",
+                "createLabel": "创建新 Test Required",
+                "createOrEditLabel": "创建或编辑 Test Required"
+            },
+            "created": "Test Required {{ param }} 创建成功",
+            "updated": "Test Required {{ param }} 更新成功",
+            "deleted": "Test Required {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Test Required {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Test Required"
+            },
+            "testRequiredOfAll": "Test Required Of All",
+            "testResult": "Test Result",
+            "testRecord": "Test Record",
+            "procedureTable": "Procedure Table"
+        }
+    }
+}

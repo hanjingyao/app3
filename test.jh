@@ -24,9 +24,6 @@ entity ProcedureTable {
 	 procedureTable String
 }
 
-
-
-
 relationship OneToOne {
 	Equipment{orderTable} to OrderTable
 }

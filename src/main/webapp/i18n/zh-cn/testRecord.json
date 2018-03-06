@@ -1,0 +1,21 @@
+{
+    "app3App": {
+        "testRecord" : {
+            "home": {
+                "title": "Test Records",
+                "createLabel": "创建新 Test Record",
+                "createOrEditLabel": "创建或编辑 Test Record"
+            },
+            "created": "Test Record {{ param }} 创建成功",
+            "updated": "Test Record {{ param }} 更新成功",
+            "deleted": "Test Record {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Test Record {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Test Record"
+            },
+            "testRecord": "Test Record"
+        }
+    }
+}
