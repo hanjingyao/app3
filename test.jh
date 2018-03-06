@@ -1,0 +1,56 @@
+entity Equipment {
+	equipment String
+}
+
+entity OrderTable {
+	rank String
+}
+
+// an ignored comment
+/** not an ignored comment */
+
+
+entity TestRequired{
+	testRequiredOfAll String
+
+}
+entity TestResult  {
+	testResult String
+}
+entity TestRecord {
+	 testRecord String
+}
+entity ProcedureTable {
+	 procedureTable String
+}
+
+
+
+
+relationship OneToOne {
+	Equipment{orderTable} to OrderTable
+}
+
+relationship OneToOne {
+	ProcedureTable{orderTable} to OrderTable
+}
+relationship OneToMany {
+	ProcedureTable{testRequired} to TestRequired
+}
+relationship OneToOne {
+	TestRequired{testResult} to TestResult
+}
+relationship OneToOne {
+	TestRequired{testRecord} to TestRecord
+}
+
+
+// Set pagination options
+
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Employee, Job
+// Set an angular suffix
+angularSuffix * with mySuffix
