@@ -120,7 +120,15 @@ public class JobResource {
         JobDTO jobDTO = jobMapper.toDto(job);
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(jobDTO));
     }
+    //hanjingyao
+ @GetMapping("/getOneJob/{id}")
+    @Timed
+    public ResponseEntity<List<Job>> gettingOneJob(@PathVariable Long id) {
+        log.debug("REST request to get Job : {}", id);
+        List<Job> job = jobRepository.findAllById(id);
 
+     return ResponseUtil.wrapOrNotFound(Optional.ofNullable(job));
+ }
     /**
      * DELETE  /jobs/:id : delete the "id" job.
      *

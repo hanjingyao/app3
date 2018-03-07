@@ -1,14 +1,15 @@
 package com.jouav.myapp.service.dto;
 
 
+
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+
 import java.util.Objects;
 
 /**
  * A DTO for the TestRequired entity.
  */
+
 public class TestRequiredDTO implements Serializable {
 
     private Long id;
@@ -20,7 +21,6 @@ public class TestRequiredDTO implements Serializable {
     private Long testRecordId;
 
     private Long procedureTableId;
-
     public Long getId() {
         return id;
     }
@@ -60,7 +60,6 @@ public class TestRequiredDTO implements Serializable {
     public void setProcedureTableId(Long procedureTableId) {
         this.procedureTableId = procedureTableId;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {

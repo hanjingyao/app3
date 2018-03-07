@@ -59,7 +59,16 @@ public class TestRequiredServiceImpl implements TestRequiredService {
             .map(testRequiredMapper::toDto)
             .collect(Collectors.toCollection(LinkedList::new));
     }
+    /*
+    * created by Hanjingyao 2018.3.7
+    * */
+    @Override
+    @Transactional(readOnly = true)
+    public List<TestRequired> findAllRequired(Long id) {
+        log.debug("Request to get all TestRequireds");
+        return testRequiredRepository.findAllById(id);
 
+    }
     /**
      * Get one testRequired by id.
      *
@@ -84,4 +93,6 @@ public class TestRequiredServiceImpl implements TestRequiredService {
         log.debug("Request to delete TestRequired : {}", id);
         testRequiredRepository.delete(id);
     }
+
+
 }

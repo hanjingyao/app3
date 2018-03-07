@@ -1,10 +1,12 @@
 package com.jouav.myapp.web.rest;
 
+
 import com.codahale.metrics.annotation.Timed;
+import com.jouav.myapp.domain.TestRequired;
 import com.jouav.myapp.service.TestRequiredService;
+import com.jouav.myapp.service.dto.TestRequiredDTO;
 import com.jouav.myapp.web.rest.errors.BadRequestAlertException;
 import com.jouav.myapp.web.rest.util.HeaderUtil;
-import com.jouav.myapp.service.dto.TestRequiredDTO;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -87,13 +88,34 @@ public class TestRequiredResource {
         log.debug("REST request to get all TestRequireds");
         return testRequiredService.findAll();
         }
+/**
+ *     created by Han Jingyao 2018.3.6
+     * GET  /test-requireds : get all the testRequireds.
+     *
+     * @return the ResponseEntity with status 200 (OK) and the list of testRequireds in body
+     */
 
+        @GetMapping("/getTestRequiredByMVC/{id}")
+        @Timed
+        public ResponseEntity<List<TestRequired>> getTestRequiredByMVC(@PathVariable Long id) {
+            log.debug("REST request to get TestRequired : {}");
+            List<TestRequired> testRequired = testRequiredService.findAllRequired(id);
+            return ResponseUtil.wrapOrNotFound(Optional.ofNullable(testRequired));
+        }
+        @GetMapping("/getRequiredByService")
+        @Timed
+    public ResponseEntity<List> getRequiredByService() {
+        log.debug("REST request to get TestRequired : {}");
+        List<TestRequiredDTO> testRequired = testRequiredService.findAll();
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(testRequired));
+    }
     /**
      * GET  /test-requireds/:id : get the "id" testRequired.
      *
      * @param id the id of the testRequiredDTO to retrieve
      * @return the ResponseEntity with status 200 (OK) and with body the testRequiredDTO, or with status 404 (Not Found)
      */
+
     @GetMapping("/test-requireds/{id}")
     @Timed
     public ResponseEntity<TestRequiredDTO> getTestRequired(@PathVariable Long id) {
@@ -101,6 +123,8 @@ public class TestRequiredResource {
         TestRequiredDTO testRequiredDTO = testRequiredService.findOne(id);
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(testRequiredDTO));
     }
+
+
 
     /**
      * DELETE  /test-requireds/:id : delete the "id" testRequired.
