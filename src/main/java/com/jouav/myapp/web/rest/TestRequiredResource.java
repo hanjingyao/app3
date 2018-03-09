@@ -48,11 +48,23 @@ public class TestRequiredResource {
         log.debug("REST request to save TestRequired : {}", testRequiredDTO);
         if (testRequiredDTO.getId() != null) {
             throw new BadRequestAlertException("A new testRequired cannot already have an ID", ENTITY_NAME, "idexists");
+
         }
         TestRequiredDTO result = testRequiredService.save(testRequiredDTO);
         return ResponseEntity.created(new URI("/api/test-requireds/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
+    }
+    /*
+    * created by hanjingyao
+    * */
+    @PostMapping("/add-requireding")
+    @Timed
+    public  List<TestRequiredDTO> createTestRequireding(Long id,  String testRequiredOfAll) throws URISyntaxException {
+        //log.debug("REST request to save TestRequired : {}", testRequiredDTO);
+
+            testRequiredService.saving(id, testRequiredOfAll);
+            return  testRequiredService.findAll();
     }
 
     /**
@@ -76,6 +88,16 @@ public class TestRequiredResource {
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, testRequiredDTO.getId().toString()))
             .body(result);
     }
+    //modified by hanJingyao
+    @PutMapping("/test-requireding")
+    @Timed
+    public List<TestRequiredDTO> updateTestRequireding( String string,Long id) {
+        if (id != null) {
+            testRequiredService.update(string, id);
+        }
+        return testRequiredService.findAll();
+    }
+
 
     /**
      * GET  /test-requireds : get all the testRequireds.
@@ -104,7 +126,7 @@ public class TestRequiredResource {
         }
         @GetMapping("/getRequiredByService")
         @Timed
-    public ResponseEntity<List> getRequiredByService() {
+        public ResponseEntity<List> getRequiredByService() {
         log.debug("REST request to get TestRequired : {}");
         List<TestRequiredDTO> testRequired = testRequiredService.findAll();
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(testRequired));

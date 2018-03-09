@@ -45,7 +45,10 @@ public interface TestRequiredService {
      *
      * @return the list of entities
      */
+
+     void update(String required, Long id);
      List<TestRequired> findAllRequired(Long id);
+     void saving(Long id, String testRequiredOfAll) ;
 
 
 }

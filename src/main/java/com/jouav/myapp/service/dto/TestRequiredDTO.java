@@ -21,6 +21,7 @@ public class TestRequiredDTO implements Serializable {
     private Long testRecordId;
 
     private Long procedureTableId;
+
     public Long getId() {
         return id;
     }
