@@ -19,7 +19,7 @@
             <th><span jhiTranslate="global.field.id">ID</span></th>
             <th><span jhiTranslate="app3App.testRequired.testRequiredOfAll">Test Required Of All</span></th>
             <th><span jhiTranslate="app3App.testRequired.testResult">Test Result</span></th>
-            <th><span jhiTranslate="app3App.testRequired.testRecord">Test Record</span></th>
+            <th><span jhiTranslate="app3App.testRequired.testRecording">Test Recording</span></th>
             <th><span jhiTranslate="app3App.testRequired.procedureTable">Procedure Table</span></th>
             <th></th>
             </tr>
@@ -34,8 +34,8 @@
                     </div>
                 </td>
                 <td>
-                    <div *ngIf="testRequired.testRecordId">
-                        <a [routerLink]="['../test-record-my-suffix', testRequired.testRecordId  ]" >{{testRequired.testRecordId}}</a>
+                    <div *ngIf="testRequired.testRecordingId">
+                        <a [routerLink]="['../test-recording-my-suffix', testRequired.testRecordingId  ]" >{{testRequired.testRecordingId}}</a>
                     </div>
                 </td>
                 <td>

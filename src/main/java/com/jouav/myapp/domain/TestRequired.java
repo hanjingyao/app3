@@ -31,9 +31,8 @@ public class TestRequired implements Serializable {
     @JoinColumn(unique = true)
     private TestResult testResult;
 
-    @OneToOne
-    @JoinColumn(unique = true)
-    private TestRecord testRecord;
+    @ManyToOne
+    private TestRecording testRecording;
 
     @ManyToOne
     private ProcedureTable procedureTable;
@@ -73,17 +72,17 @@ public class TestRequired implements Serializable {
         this.testResult = testResult;
     }
 
-    public TestRecord getTestRecord() {
-        return testRecord;
+    public TestRecording getTestRecording() {
+        return testRecording;
     }
 
-    public TestRequired testRecord(TestRecord testRecord) {
-        this.testRecord = testRecord;
+    public TestRequired testRecording(TestRecording testRecording) {
+        this.testRecording = testRecording;
         return this;
     }
 
-    public void setTestRecord(TestRecord testRecord) {
-        this.testRecord = testRecord;
+    public void setTestRecording(TestRecording testRecording) {
+        this.testRecording = testRecording;
     }
 
     public ProcedureTable getProcedureTable() {

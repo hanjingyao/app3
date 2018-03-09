@@ -8,16 +8,16 @@ import org.mapstruct.*;
 /**
  * Mapper for the entity TestRequired and its DTO TestRequiredDTO.
  */
-@Mapper(componentModel = "spring", uses = {TestResultMapper.class, TestRecordMapper.class, ProcedureTableMapper.class})
+@Mapper(componentModel = "spring", uses = {TestResultMapper.class, TestRecordingMapper.class, ProcedureTableMapper.class})
 public interface TestRequiredMapper extends EntityMapper<TestRequiredDTO, TestRequired> {
 
     @Mapping(source = "testResult.id", target = "testResultId")
-    @Mapping(source = "testRecord.id", target = "testRecordId")
+    @Mapping(source = "testRecording.id", target = "testRecordingId")
     @Mapping(source = "procedureTable.id", target = "procedureTableId")
     TestRequiredDTO toDto(TestRequired testRequired);
 
     @Mapping(source = "testResultId", target = "testResult")
-    @Mapping(source = "testRecordId", target = "testRecord")
+    @Mapping(source = "testRecordingId", target = "testRecording")
     @Mapping(source = "procedureTableId", target = "procedureTable")
     TestRequired toEntity(TestRequiredDTO testRequiredDTO);
 

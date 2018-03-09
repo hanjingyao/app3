@@ -14,6 +14,7 @@ import { App3TestRequiredMySuffixModule } from './test-required-my-suffix/test-r
 import { App3TestResultMySuffixModule } from './test-result-my-suffix/test-result-my-suffix.module';
 import { App3TestRecordMySuffixModule } from './test-record-my-suffix/test-record-my-suffix.module';
 import { App3ProcedureTableMySuffixModule } from './procedure-table-my-suffix/procedure-table-my-suffix.module';
+import { App3TestRecordingMySuffixModule } from './test-recording-my-suffix/test-recording-my-suffix.module';
 /* jhipster-needle-add-entity-module-import - JHipster will add entity modules imports here */
 
 @NgModule({
@@ -32,6 +33,7 @@ import { App3ProcedureTableMySuffixModule } from './procedure-table-my-suffix/pr
         App3TestResultMySuffixModule,
         App3TestRecordMySuffixModule,
         App3ProcedureTableMySuffixModule,
+        App3TestRecordingMySuffixModule,
         /* jhipster-needle-add-entity-module - JHipster will add entity modules here */
     ],
     declarations: [],

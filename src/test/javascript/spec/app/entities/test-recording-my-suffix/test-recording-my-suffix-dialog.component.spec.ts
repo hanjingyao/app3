@@ -5,41 +5,35 @@ import { Observable } from 'rxjs/Observable';
 import { JhiEventManager } from 'ng-jhipster';
 
 import { App3TestModule } from '../../../test.module';
-import { TestRequiredMySuffixDialogComponent } from '../../../../../../main/webapp/app/entities/test-required-my-suffix/test-required-my-suffix-dialog.component';
-import { TestRequiredMySuffixService } from '../../../../../../main/webapp/app/entities/test-required-my-suffix/test-required-my-suffix.service';
-import { TestRequiredMySuffix } from '../../../../../../main/webapp/app/entities/test-required-my-suffix/test-required-my-suffix.model';
-import { TestResultMySuffixService } from '../../../../../../main/webapp/app/entities/test-result-my-suffix';
-import { TestRecordingMySuffixService } from '../../../../../../main/webapp/app/entities/test-recording-my-suffix';
-import { ProcedureTableMySuffixService } from '../../../../../../main/webapp/app/entities/procedure-table-my-suffix';
+import { TestRecordingMySuffixDialogComponent } from '../../../../../../main/webapp/app/entities/test-recording-my-suffix/test-recording-my-suffix-dialog.component';
+import { TestRecordingMySuffixService } from '../../../../../../main/webapp/app/entities/test-recording-my-suffix/test-recording-my-suffix.service';
+import { TestRecordingMySuffix } from '../../../../../../main/webapp/app/entities/test-recording-my-suffix/test-recording-my-suffix.model';
 
 describe('Component Tests', () => {
 
-    describe('TestRequiredMySuffix Management Dialog Component', () => {
-        let comp: TestRequiredMySuffixDialogComponent;
-        let fixture: ComponentFixture<TestRequiredMySuffixDialogComponent>;
-        let service: TestRequiredMySuffixService;
+    describe('TestRecordingMySuffix Management Dialog Component', () => {
+        let comp: TestRecordingMySuffixDialogComponent;
+        let fixture: ComponentFixture<TestRecordingMySuffixDialogComponent>;
+        let service: TestRecordingMySuffixService;
         let mockEventManager: any;
         let mockActiveModal: any;
 
         beforeEach(async(() => {
             TestBed.configureTestingModule({
                 imports: [App3TestModule],
-                declarations: [TestRequiredMySuffixDialogComponent],
+                declarations: [TestRecordingMySuffixDialogComponent],
                 providers: [
-                    TestResultMySuffixService,
-                    TestRecordingMySuffixService,
-                    ProcedureTableMySuffixService,
-                    TestRequiredMySuffixService
+                    TestRecordingMySuffixService
                 ]
             })
-            .overrideTemplate(TestRequiredMySuffixDialogComponent, '')
+            .overrideTemplate(TestRecordingMySuffixDialogComponent, '')
             .compileComponents();
         }));
 
         beforeEach(() => {
-            fixture = TestBed.createComponent(TestRequiredMySuffixDialogComponent);
+            fixture = TestBed.createComponent(TestRecordingMySuffixDialogComponent);
             comp = fixture.componentInstance;
-            service = fixture.debugElement.injector.get(TestRequiredMySuffixService);
+            service = fixture.debugElement.injector.get(TestRecordingMySuffixService);
             mockEventManager = fixture.debugElement.injector.get(JhiEventManager);
             mockActiveModal = fixture.debugElement.injector.get(NgbActiveModal);
         });
@@ -49,9 +43,9 @@ describe('Component Tests', () => {
                 inject([],
                     fakeAsync(() => {
                         // GIVEN
-                        const entity = new TestRequiredMySuffix(123);
+                        const entity = new TestRecordingMySuffix(123);
                         spyOn(service, 'update').and.returnValue(Observable.of(entity));
-                        comp.testRequired = entity;
+                        comp.testRecording = entity;
                         // WHEN
                         comp.save();
                         tick(); // simulate async
@@ -59,7 +53,7 @@ describe('Component Tests', () => {
                         // THEN
                         expect(service.update).toHaveBeenCalledWith(entity);
                         expect(comp.isSaving).toEqual(false);
-                        expect(mockEventManager.broadcastSpy).toHaveBeenCalledWith({ name: 'testRequiredListModification', content: 'OK'});
+                        expect(mockEventManager.broadcastSpy).toHaveBeenCalledWith({ name: 'testRecordingListModification', content: 'OK'});
                         expect(mockActiveModal.dismissSpy).toHaveBeenCalled();
                     })
                 )
@@ -69,9 +63,9 @@ describe('Component Tests', () => {
                 inject([],
                     fakeAsync(() => {
                         // GIVEN
-                        const entity = new TestRequiredMySuffix();
+                        const entity = new TestRecordingMySuffix();
                         spyOn(service, 'create').and.returnValue(Observable.of(entity));
-                        comp.testRequired = entity;
+                        comp.testRecording = entity;
                         // WHEN
                         comp.save();
                         tick(); // simulate async
@@ -79,7 +73,7 @@ describe('Component Tests', () => {
                         // THEN
                         expect(service.create).toHaveBeenCalledWith(entity);
                         expect(comp.isSaving).toEqual(false);
-                        expect(mockEventManager.broadcastSpy).toHaveBeenCalledWith({ name: 'testRequiredListModification', content: 'OK'});
+                        expect(mockEventManager.broadcastSpy).toHaveBeenCalledWith({ name: 'testRecordingListModification', content: 'OK'});
                         expect(mockActiveModal.dismissSpy).toHaveBeenCalled();
                     })
                 )

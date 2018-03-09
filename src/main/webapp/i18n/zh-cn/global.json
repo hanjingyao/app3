@@ -21,6 +21,7 @@
                 "testResultMySuffix": "Test Result",
                 "testRecordMySuffix": "Test Record",
                 "procedureTableMySuffix": "Procedure Table",
+                "testRecordingMySuffix": "Test Recording",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

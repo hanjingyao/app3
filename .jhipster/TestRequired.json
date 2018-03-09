@@ -3,19 +3,19 @@
     "relationships": [
         {
             "relationshipType": "one-to-one",
-            "relationshipName": "testResult",
-            "otherEntityName": "testResult",
+            "relationshipName": "testRecording",
+            "otherEntityName": "testRecording",
             "otherEntityField": "id",
             "ownerSide": true,
             "otherEntityRelationshipName": "testRequired"
         },
         {
-            "relationshipType": "one-to-one",
-            "relationshipName": "testRecord",
-            "otherEntityName": "testRecord",
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "testResult",
+            "otherEntityName": "testResult",
             "otherEntityField": "id",
-            "ownerSide": true,
-            "otherEntityRelationshipName": "testRequired"
+            "ownerSide": true
         },
         {
             "relationshipName": "procedureTable",

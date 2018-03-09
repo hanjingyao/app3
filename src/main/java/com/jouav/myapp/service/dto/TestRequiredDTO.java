@@ -1,15 +1,12 @@
 package com.jouav.myapp.service.dto;
 
 
-
 import java.io.Serializable;
-
 import java.util.Objects;
 
 /**
  * A DTO for the TestRequired entity.
  */
-
 public class TestRequiredDTO implements Serializable {
 
     private Long id;
@@ -18,7 +15,7 @@ public class TestRequiredDTO implements Serializable {
 
     private Long testResultId;
 
-    private Long testRecordId;
+    private Long testRecordingId;
 
     private Long procedureTableId;
 
@@ -46,12 +43,12 @@ public class TestRequiredDTO implements Serializable {
         this.testResultId = testResultId;
     }
 
-    public Long getTestRecordId() {
-        return testRecordId;
+    public Long getTestRecordingId() {
+        return testRecordingId;
     }
 
-    public void setTestRecordId(Long testRecordId) {
-        this.testRecordId = testRecordId;
+    public void setTestRecordingId(Long testRecordingId) {
+        this.testRecordingId = testRecordingId;
     }
 
     public Long getProcedureTableId() {
@@ -61,6 +58,7 @@ public class TestRequiredDTO implements Serializable {
     public void setProcedureTableId(Long procedureTableId) {
         this.procedureTableId = procedureTableId;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {

@@ -64,6 +64,7 @@ public class CacheConfiguration {
             cm.createCache(com.jouav.myapp.domain.TestRecord.class.getName(), jcacheConfiguration);
             cm.createCache(com.jouav.myapp.domain.ProcedureTable.class.getName(), jcacheConfiguration);
             cm.createCache(com.jouav.myapp.domain.ProcedureTable.class.getName() + ".testRequireds", jcacheConfiguration);
+            cm.createCache(com.jouav.myapp.domain.TestRecording.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

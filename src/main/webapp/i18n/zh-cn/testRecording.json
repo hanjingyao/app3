@@ -1,0 +1,21 @@
+{
+    "app3App": {
+        "testRecording" : {
+            "home": {
+                "title": "Test Recordings",
+                "createLabel": "创建新 Test Recording",
+                "createOrEditLabel": "创建或编辑 Test Recording"
+            },
+            "created": "Test Recording {{ param }} 创建成功",
+            "updated": "Test Recording {{ param }} 更新成功",
+            "deleted": "Test Recording {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Test Recording {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Test Recording"
+            },
+            "testRecord": "Test Record"
+        }
+    }
+}

@@ -14,11 +14,11 @@
                                  referencedColumnNames="id"
                                  referencedTableName="test_result"/>
 
-        <addForeignKeyConstraint baseColumnNames="test_record_id"
+        <addForeignKeyConstraint baseColumnNames="test_recording_id"
                                  baseTableName="test_required"
-                                 constraintName="fk_test_required_test_record_id"
+                                 constraintName="fk_test_required_test_recording_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="test_record"/>
+                                 referencedTableName="test_recording"/>
 
         <addForeignKeyConstraint baseColumnNames="procedure_table_id"
                                  baseTableName="test_required"

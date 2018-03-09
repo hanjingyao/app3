@@ -14,10 +14,10 @@
                 <a [routerLink]="['/test-result-my-suffix', testRequired.testResultId]">{{testRequired.testResultId}}</a>
             </div>
         </dd>
-        <dt><span jhiTranslate="app3App.testRequired.testRecord">Test Record</span></dt>
+        <dt><span jhiTranslate="app3App.testRequired.testRecording">Test Recording</span></dt>
         <dd>
-            <div *ngIf="testRequired.testRecordId">
-                <a [routerLink]="['/test-record-my-suffix', testRequired.testRecordId]">{{testRequired.testRecordId}}</a>
+            <div *ngIf="testRequired.testRecordingId">
+                <a [routerLink]="['/test-recording-my-suffix', testRequired.testRecordingId]">{{testRequired.testRecordingId}}</a>
             </div>
         </dd>
         <dt><span jhiTranslate="app3App.testRequired.procedureTable">Procedure Table</span></dt>

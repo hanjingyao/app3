@@ -1,8 +1,6 @@
 package com.jouav.myapp.service;
 
-import com.jouav.myapp.domain.TestRequired;
 import com.jouav.myapp.service.dto.TestRequiredDTO;
-
 import java.util.List;
 
 /**
@@ -39,16 +37,4 @@ public interface TestRequiredService {
      * @param id the id of the entity
      */
     void delete(Long id);
-
-    /**created by hanjingyao
-     * Get all the testRequireds.
-     *
-     * @return the list of entities
-     */
-
-     void update(String required, Long id);
-     List<TestRequired> findAllRequired(Long id);
-     void saving(Long id, String testRequiredOfAll) ;
-
-
 }

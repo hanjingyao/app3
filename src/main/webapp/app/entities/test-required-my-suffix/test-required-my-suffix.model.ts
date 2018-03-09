@@ -5,7 +5,7 @@ export class TestRequiredMySuffix implements BaseEntity {
         public id?: number,
         public testRequiredOfAll?: string,
         public testResultId?: number,
-        public testRecordId?: number,
+        public testRecordingId?: number,
         public procedureTableId?: number,
     ) {
     }

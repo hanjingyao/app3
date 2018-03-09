@@ -17,7 +17,7 @@ entity TestRequired{
 entity TestResult  {
 	testResult String
 }
-entity TestRecord {
+entity TestRecording {
 	 testRecord String
 }
 entity ProcedureTable {
@@ -34,11 +34,11 @@ relationship OneToOne {
 relationship OneToMany {
 	ProcedureTable{testRequired} to TestRequired
 }
-relationship OneToOne {
+relationship ManyToMany {
 	TestRequired{testResult} to TestResult
 }
 relationship OneToOne {
-	TestRequired{testRecord} to TestRecord
+	TestRequired{testRecording} to TestRecording
 }
 
 

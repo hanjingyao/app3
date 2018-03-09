@@ -10,7 +10,7 @@ import { TestRequiredMySuffix } from './test-required-my-suffix.model';
 import { TestRequiredMySuffixPopupService } from './test-required-my-suffix-popup.service';
 import { TestRequiredMySuffixService } from './test-required-my-suffix.service';
 import { TestResultMySuffix, TestResultMySuffixService } from '../test-result-my-suffix';
-import { TestRecordMySuffix, TestRecordMySuffixService } from '../test-record-my-suffix';
+import { TestRecordingMySuffix, TestRecordingMySuffixService } from '../test-recording-my-suffix';
 import { ProcedureTableMySuffix, ProcedureTableMySuffixService } from '../procedure-table-my-suffix';
 import { ResponseWrapper } from '../../shared';
 
@@ -25,7 +25,7 @@ export class TestRequiredMySuffixDialogComponent implements OnInit {
 
     testresults: TestResultMySuffix[];
 
-    testrecords: TestRecordMySuffix[];
+    testrecordings: TestRecordingMySuffix[];
 
     proceduretables: ProcedureTableMySuffix[];
 
@@ -34,7 +34,7 @@ export class TestRequiredMySuffixDialogComponent implements OnInit {
         private jhiAlertService: JhiAlertService,
         private testRequiredService: TestRequiredMySuffixService,
         private testResultService: TestResultMySuffixService,
-        private testRecordService: TestRecordMySuffixService,
+        private testRecordingService: TestRecordingMySuffixService,
         private procedureTableService: ProcedureTableMySuffixService,
         private eventManager: JhiEventManager
     ) {
@@ -55,19 +55,8 @@ export class TestRequiredMySuffixDialogComponent implements OnInit {
                         }, (subRes: ResponseWrapper) => this.onError(subRes.json));
                 }
             }, (res: ResponseWrapper) => this.onError(res.json));
-        this.testRecordService
-            .query({filter: 'testrequired-is-null'})
-            .subscribe((res: ResponseWrapper) => {
-                if (!this.testRequired.testRecordId) {
-                    this.testrecords = res.json;
-                } else {
-                    this.testRecordService
-                        .find(this.testRequired.testRecordId)
-                        .subscribe((subRes: TestRecordMySuffix) => {
-                            this.testrecords = [subRes].concat(res.json);
-                        }, (subRes: ResponseWrapper) => this.onError(subRes.json));
-                }
-            }, (res: ResponseWrapper) => this.onError(res.json));
+        this.testRecordingService.query()
+            .subscribe((res: ResponseWrapper) => { this.testrecordings = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
         this.procedureTableService.query()
             .subscribe((res: ResponseWrapper) => { this.proceduretables = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
     }
@@ -110,7 +99,7 @@ export class TestRequiredMySuffixDialogComponent implements OnInit {
         return item.id;
     }
 
-    trackTestRecordById(index: number, item: TestRecordMySuffix) {
+    trackTestRecordingById(index: number, item: TestRecordingMySuffix) {
         return item.id;
     }
 

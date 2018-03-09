@@ -26,10 +26,10 @@
             </select>
         </div>
         <div class="form-group">
-            <label class="form-control-label" jhiTranslate="app3App.testRequired.testRecord" for="field_testRecord">Test Record</label>
-            <select class="form-control" id="field_testRecord" name="testRecord" [(ngModel)]="testRequired.testRecordId">
+            <label class="form-control-label" jhiTranslate="app3App.testRequired.testRecording" for="field_testRecording">Test Recording</label>
+            <select class="form-control" id="field_testRecording" name="testRecording" [(ngModel)]="testRequired.testRecordingId" >
                 <option [ngValue]="null"></option>
-                <option [ngValue]="testRecordOption.id" *ngFor="let testRecordOption of testrecords; trackBy: trackTestRecordById">{{testRecordOption.id}}</option>
+                <option [ngValue]="testRecordingOption.id" *ngFor="let testRecordingOption of testrecordings; trackBy: trackTestRecordingById">{{testRecordingOption.id}}</option>
             </select>
         </div>
         <div class="form-group">
